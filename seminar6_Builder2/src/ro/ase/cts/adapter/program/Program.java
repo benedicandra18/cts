@@ -1,6 +1,7 @@
 package ro.ase.cts.adapter.program;
 
 import ro.ase.cts.adapter.clase.AdapterBilet;
+import ro.ase.cts.adapter.clase.AdapterObiecte;
 import ro.ase.cts.adapter.clase.Bilet;
 import ro.ase.cts.adapter.clase.BiletOnline;
 
@@ -17,11 +18,14 @@ public class Program {
 	}
 
 	public static void main(String[] args) {
-		Bilet bo=new Bilet(30);
+		Bilet bilet=new Bilet(30);
 		BiletOnline biletOnline=new AdapterBilet(40);
 		
-		rezervaSiVindeBiletLaCasa(bo);
+		rezervaSiVindeBiletLaCasa(bilet);
 		rezervaSiVindeBilet(biletOnline);
+		
+		AdapterObiecte adapterOb=new AdapterObiecte(bilet);
+		rezervaSiVindeBilet(adapterOb);
 		
 
 	}
