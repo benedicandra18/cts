@@ -6,6 +6,12 @@ public class Broker {
 	private List<Imprumut> imprumuturi;
 	private double comision;
 
+	public Broker(List<Imprumut> imprumuturi, double comision) {
+		super();
+		this.imprumuturi = imprumuturi;
+		this.comision = comision;
+	}
+
 	public double calculeazaComisionTotal() {
 		double comisionTotal = 0.0;
 		int temp = 365;
