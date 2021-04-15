@@ -11,7 +11,7 @@ public class Program {
 	}
 	public static void main(String[] args) {
 		OperatorRezervare operator1=new OperatorRezervare("QP");
-		//operator1.rezerva(2);
+		operator1.rezerva(2);
 		functie(operator1,2);
 		
 		Proxy proxy=new Proxy(operator1,4);
