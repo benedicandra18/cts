@@ -16,6 +16,7 @@ public class Program {
 		
 		Proxy proxy=new Proxy(operator1,4);
 		proxy.rezerva(2);
+		
 		proxy.rezerva(5);
 		functie(proxy,2);
 	}
