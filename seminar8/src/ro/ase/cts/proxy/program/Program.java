@@ -19,6 +19,7 @@ public class Program {
 		
 		proxy.rezerva(5);
 		functie(proxy,2);
+		
 	}
 
 }
