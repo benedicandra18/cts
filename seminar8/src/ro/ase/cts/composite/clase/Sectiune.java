@@ -6,12 +6,14 @@ import java.util.List;
 public class Sectiune implements ComponentaMeniu{
 	
 	private String numeSectiune;
+	private float durataSectiune;
 	private List<ComponentaMeniu> componente;
 	
 	
-	public Sectiune(String numeSectiune) {
+	public Sectiune(String numeSectiune, float durata) {
 		super();
 		this.numeSectiune = numeSectiune;
+		this.durataSectiune=durata;
 		this.componente = new ArrayList<ComponentaMeniu>();
 	}
 
