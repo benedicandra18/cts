@@ -3,8 +3,13 @@ package teste;
 import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
+
 import clase.Grupa;
 import clase.Student;
+import teste.categorii.TesteGetPromovabilitate;
+import teste.categorii.TesteNormale;
+import teste.categorii.TesteUrgente;
 
 public class TestGrupa {
 		
@@ -30,6 +35,7 @@ public class TestGrupa {
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
+	@Category(TesteUrgente.class)
 	public void testConstrctorError() {
 		Grupa grupa = new Grupa(1200);
 		
@@ -56,6 +62,7 @@ public class TestGrupa {
 	//existance
 	
 	@Test
+	@Category(TesteNormale.class)
 	public void testConstrctorLista() {
 		Grupa grupa= new Grupa(1076);
 		assertNotNull(grupa.getStudenti());
@@ -68,6 +75,7 @@ public class TestGrupa {
 	//RIGHT BICEP
 	
 	@Test
+	@Category({TesteGetPromovabilitate.class,TesteUrgente.class})
 	public void testePromovabilitateRight() {
 		Grupa grupa = new Grupa(1076);
 		for(int i=0;i<7;i++) {
@@ -94,6 +102,7 @@ public class TestGrupa {
 	//boundary
 	
 	@Test
+	@Category({TesteGetPromovabilitate.class,TesteNormale.class})
 	public void testPromovabilitateBoundaryInf() {
 		Grupa grupa = new Grupa(1076);
 		for(int i=0;i<7;i++) {
@@ -108,6 +117,7 @@ public class TestGrupa {
 	}
 	
 	@Test
+	@Category(TesteGetPromovabilitate.class)
 	public void testPromovabilitateBoundarySup() {
 		Grupa grupa = new Grupa(1076);
 		for(int i=0;i<7;i++) {
@@ -122,6 +132,7 @@ public class TestGrupa {
 	}
 	
 	@Test(expected= IllegalArgumentException.class)
+	@Category(TesteGetPromovabilitate.class)
 	public void testPromovabilitateCross() {
 		Grupa grupa = new Grupa(1076);
 		grupa.getPromovabilitate();
